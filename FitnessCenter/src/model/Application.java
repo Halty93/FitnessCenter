@@ -1,3 +1,6 @@
+/**
+ * 
+ */
 package model;
 
 import java.io.Serializable;
@@ -6,24 +9,21 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 
 /**
  * @author FSS Halty
- *trida reprezentujici aktivitu
+ *trida reprezentujici prihlasku na termin
  */
 @Entity
-public class Activity implements Serializable {
+public class Application implements Serializable {
 	
 	@Id
 	@GeneratedValue 
 	private int id; 
 	
 	@NotNull
-	@Size(min=2)
-	private String name;
+	private Customer customer;
 	
 	@NotNull
-	private int level;
-	
+	private int termId;
 }
